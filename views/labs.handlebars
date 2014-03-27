@@ -1,0 +1,150 @@
+<!doctype html>
+
+<html>
+<head>
+
+
+	<title>{{room}} View</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href = "../css/bootstrap.css" rel = "stylesheet">
+	<link href = "../css/metro-bootstrap.css" rel = "stylesheet">
+	<link rel = "stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css">
+
+	<link href = "../css/style.css" rel = "stylesheet">
+	<script src = "../js/jquery-2.1.0.min.js"></script>
+	<script src = "../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/data.json"></script>
+	<script src = "http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
+
+	<script>
+		function saveData()
+		{
+			var data = JSON.parse("data.json");  //parse the JSON
+			data.projects.push(		{
+						"name": "B220",
+						"description": [
+							{"person":"Anonymous at 6:02pm", "detail": "assignment got extended! :)"},
+							{"person":"Peter at 8:00pm", "detail":"tutors are here!"}
+						],
+						"id": "B220",
+						"stank":"50",
+						"crowd":"30"	
+					});
+			txt = JSON.stringify(data);  //reserialize to JSON
+		}
+	</script>
+</head>
+
+<body>
+  <div data-role="header" class="jqm-header ui-header ui-bar-f ui-header-fixed 
+  	slidedown" data-theme="a" data-position="fixed" role="banner ">
+   	<h1 class="ui-title" role="heading" aria-level="1"><strong>Room {{room}}</strong></h1>
+    <a href="../index" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+    <a href="../contactus" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext">Info Icon</a>
+  </div>
+  
+	
+	<div class="table-responsive">
+  	<table class="table">
+			<tr>
+				<!--<td style = "color:black; float:left; width:50%;">Current Stench: {{stank}}%</td>
+				<td style = "color:black; float:left; width:50%;">Current Fullness: {{crowd}}%</td>-->
+
+				<td style = "float:left; width:50%;">
+					<div>
+                	<h5 style = "text-align:center; margin-left:10%; color:black;">Stench:</h5>
+                	<div class="progress" style = " align:right; width:100%;">
+  						      <div class="progress-bar" role="progressbar" aria-valuenow="{{stank}}" 
+  						        aria-valuemin="0" aria-valuemax="100" style="width: {{stank}}%;">
+    						      {{stank}}%
+  						      </div>
+					         </div>
+				        </div>
+				</td>
+
+				<td style = "float:left; width:50%;">
+					<div>
+                	<h5 style = "text-align:center; margin-left:10%; color:black;">Fullness:</h5>              
+                  	<div class="progress" style = " align:right; width:100%;">
+          						<div class="progress-bar" role="progressbar" aria-valuenow="{{crowd}}" 
+          						  aria-valuemin="0" aria-valuemax="100" style="width: {{crowd}}%;">
+            						{{crowd}}%
+          						</div>
+          					</div>
+        				</div>
+				</td>
+
+			</tr>
+			<tr>
+				<td>
+				<button class='btn btn-warning' onclick="window.location.href='/updateconditions'"
+				>Submit your own report</button>
+				</td>
+			</tr>
+			{{#each description}}
+    		<tr >
+                <td>
+                <p>{{person}}</p>
+                <p style = "color:black;">{{detail}}</p>
+				</td>
+			</tr>
+			{{/each}}
+  	</table>
+	</div>
+
+	<hr>
+	<p class="text-center">
+    &copy; 2014, //TODO -- CSE 170
+	</p>
+	
+    <div class="modal fade container" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+    	style = " height:100%;">
+		    <div class="modal-content">
+		      	<div class="modal-header">
+		        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        	<h1 class="modal-title" id="myModalLabel">Submit a Report</h1>
+		      	</div>
+		      	<div class="modal-body">
+		      		<div class="alert alert-danger" id="noRoom"style="display:none">No Room Selected</div>
+			        <form class="form-horizontal" role="form">
+					  	<div class="form-group">
+					    	<label class="sr-only" for="exampleInputEmail2">Email address</label>
+					    	<input type="email" class="form-control" id="name" placeholder="Name">
+					  	</div>
+						<p>
+							<label for="stank">Stench</label>
+							<input type="text" id="stank" style="border:2; color:green; font-weight:bold; width:30%;">/100
+						</p>						 
+						<div id="slider-range-min"></div>
+						<p>
+							<label for="crowd">Fullness</label>
+							<input type="text" id="crowd" style="border:2; color:red; font-weight:bold; width:30%;">/100
+						</p>						 
+						<div id="slider-range-min2"></div>
+					  	<div class="checkbox">
+						    <label>
+						      <input type="checkbox"> Smells like food/rotting odor
+						    </label>
+					  	</div>
+					  	<div class="checkbox">
+						    <label>
+						      <input type="checkbox"> Smells like sweat/body odor
+						    </label>
+					  	</div>
+					  	<div class="checkbox">
+						    <label>
+						      <input type="checkbox"> <input placeholder="other"type="text" class="form-control">
+						    </label>
+					  	</div>
+					</form>
+		      	</div>
+		      	<div class="modal-footer">
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		        	<button type="button" class="btn btn-primary submitProblem" data-dismiss="modal" id = "saveData" onclick = "_gaq.push(['_trackEvent', 
+					'updateConditions', 'popup', 'Form']);">Submit</button>
+		      	</div>
+		  </div>
+	</div>
+</body>
+</html>

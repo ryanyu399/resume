@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Update</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href = "../css/bootstrap.css" rel = "stylesheet">
+	<link href = "../css/metro-bootstrap.css" rel = "stylesheet">
+	<link rel = "stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css">
+
+	<link href = "../css/style.css" rel = "stylesheet">
+	<script src = "../js/jquery-2.1.0.min.js"></script>
+	<script src = "../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/data.json"></script>
+	<script src = "http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
+	<script>
+$(function(){
+    $("input[type='checkbox']").change(function(){
+
+        if($(this).is(":checked"))
+        {
+            $("#"+$(this).attr("id")+"_box").show();
+        }
+        else{
+          $("#"+$(this).attr("id")+"_box").find("input[type='text']").val("")  ;
+          $("#"+$(this).attr("id")+"_box").hide(); 
+        }
+    });
+});
+</script>
+</head>
+
+<body>
+  <div data-role="header" class="jqm-header ui-header ui-bar-f ui-header-fixed 
+  	slidedown" data-theme="a" data-position="fixed" role="banner ">
+   	<h1 class="ui-title" role="heading" aria-level="1"><strong>Room {{room}}</strong></h1>
+    <a href="index" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+    <a href="contactus" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext">Info Icon</a>
+  </div>
+
+	
+	<form class="form-horizontal" role="form" style = "margin-left:5%; margin-right:5%;">
+	  	<div class="form-group">
+	    	<label class="sr-only" for="exampleInputEmail2">Email address</label>
+	    	<input type="email" class="form-control" id="name" placeholder="Name">
+	  	</div>
+		<p>
+			<label for="stank">Stench:</label>
+			<div>
+				<h4 style = "float:right;margin-right:45%;">%</h4>
+
+				<div style = "width:50%;">
+					<input type="text" id="stank" style="border:2; color:green; 
+						font-weight:bold; width:30%; display:block;">
+				</div>
+			</div>
+
+		</p>						 
+		<div id="slider-range-min"></div>
+		<p>
+			<label for="stank">Fullness:</label>
+			<div>
+				<h4 style = "float:right;margin-right:45%;">%</h4>
+
+				<div style = "width:50%;">
+					<input type="text" id="stank" style="border:2; color:green; 
+						font-weight:bold; width:30%; display:block;">
+				</div>
+			</div>
+
+		</p>						 
+		<div id="slider-range-min2"></div>
+		    <label>
+		      <input type="checkbox"> Smells like food/rotting odor
+		    </label>
+	  	<br>
+		    <label>
+		      <input type="checkbox"> Smells like sweat/body odor
+		    </label>
+		<br>
+		    <label>
+		    <label>
+				<div class="munna">                    
+					<input id="chk"  type="checkbox"
+						onClick="document.getElementById('reason').focus();">Other Reason
+				</div>
+			</label>
+			<label>
+				<div id="chk_box" style="display:none;">
+					<input type="text" size="5" value=""  name="reason" 
+						id="reason" />
+				</div>
+		    </label>
+	</form>
+	</div>
+	<div class="modal-footer">
+	<button type="button" class="btn btn-primary" data-dismiss="modal" onclick = "history.go(-1);">Cancel</button>
+	<br>
+	<button type="button" class="btn btn-success submitProblem"data-dismiss="modal" id = "saveData" onclick = "history.go(-1);">Submit</button>
+	</div>
+		<hr>
+	<p class="text-center">
+    &copy; 2014, //TODO -- CSE 170
+	</p>
+</body>
+</html>
