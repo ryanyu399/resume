@@ -5,59 +5,66 @@
 	<title>About US</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href = "css/bootstrap-twitter.css" rel = "stylesheet">
-	<link href = "css/metro-bootstrap.css" rel = "stylesheet">
-	<link href = "css/style.css" rel = "stylesheet">
-	<script src = "js/jquery-2.1.0.min.js"></script>
-	<script src = "../js/bootstrap.min.js"></script>
-	<script src = "routes/index.js"></script>
-<script>
-	jQuery(document).ready(function($) 
-	{
-      $(".clickableRow").click(function() 
-      {
-      	var name = $(this).attr("id");
-		window.document.location = $(this).attr("href");
-      	//var name = $(this).attr("id");
-      	//$("#reload").load("labs.html");
-      });
-	});
-</script>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-twitter.css" />
+		<link rel="stylesheet" type="text/css" href="css/metro-bootstrap.css" />
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<script src="js/bootstrap.js"></script>
 </head>
 
-<body style = "overflow-x: hidden; overflow-y: scroll;">
-  <div data-role="header" class="jqm-header ui-header ui-bar-f ui-header-fixed 
-  	slidedown" data-theme="a" data-position="fixed" role="banner ">
-   	<h1 class="ui-title" role="heading" aria-level="1"><strong>About Us</strong></h1>
-    <a href="../index" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
-    <a href="contactus" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext">Info Icon</a>
-  </div>
-				<h4 style = "margin-left:5%; margin-right:5%;">
-					The CSE Lab Weather app is designed to help you 
-					know the current conditions of the labs so that you can make the best possible decision for the 
-					best possible work environment. There are currently two metrics:
-				</h4>
-				<h4 style = "margin-left:5%; margin-right:5%;">
-					Fullness indicates how full the lab is. 0% is empty, 100% is full.
-				</h4>
-				<h4 style = "margin-left:5%; margin-right:5%;">
-					Stench indicates how clean or pleasant the lab is. 0% is clean, 100% is disgusting.
-				</h4>
-				<br>
-				<br>
-			<h4 style = "margin-left:5%; margin-right:5%;"> <strong>Team Members</strong>
-				<br>
-				<ul>
-					<br><li>Ryan Yu</li><br>
-					<li>Eric Lowe</li><br>
-					<li>Luke Kim</li>
-				</ul>
-			</h4>
-			<br>
+<body>
+<div style = "position:relative;">
+	<div class=".col-xs-6 .col-sm-3">
+		<div class="thumbnail tile tile-green">
+        	<a href="index" class="fa-links">
+            	<h1>Home</h1>
+                <i class="fa fa-3x fa-home"></i>
+			</a>
+    	</div>
+	</div>
+	<div class=".col-xs-6 .col-sm-3">
+		<div class="thumbnail tile tile-orange">
+        	<a href="experience" class="fa-links">
+            	<h1 style = "width:100%;">EXP</h1>
+                <i class="fa fa-3x fa-terminal"></i>
+			</a>
+		</div>
+	</div>
+	<div class=".col-xs-6 .col-sm-3">
+		<div class="thumbnail tile tile-red">
+        	<a href="fun" class="fa-links">
+            	<h1>Hobbies</h1>
+                <i class="fa fa-3x fa-smile-o"></i>
+			</a>
+		</div>
+	</div>
+	<div class=".col-xs-6 .col-sm-3">
+		<div class="thumbnail tile tile-blue">
+        	<a href="contact" class="fa-links">
+            	<h1>Contact</h1>
+            	<i class="fa fa-3x fa-envelope"></i>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="row" style = "margin-top:15%; position:relative;">
+  <div class="span6">
+		<h1>Contact Me</h1>
+		<h2> Email: ryyu@ucsd.edu<h2>
+		<h2> Phone Number: (510) 375-1500</h2>
+	</div>
+</div>
+	
+	<div style ="clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;">
 	<hr>
 	<p class="text-center">
-    &copy; 2014, //TODO -- CSE 170
+    &copy; 2014, Ryan Yu
 	</p>
+	</div>
 
 </body>
 </html>
