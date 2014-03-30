@@ -7,20 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-twitter.css" />
+		<script src="js/bootstrap.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/metro-bootstrap.css" />
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		<script src="js/bootstrap.js"></script>
 		<script>
-	jQuery(document).ready(function($) 
-	{
-      $(".click").click(function() 
-      {
-      	var name = $(this).attr("id");
-		window.document.location = $(this).attr("href");
-      	//var name = $(this).attr("id");
-      	//$("#reload").load("labs.html");
-      });
-	});
+$('button').click(function(){
+    $(this).text(function(i,old){
+        return old=='+' ?  '-' : '+';
+    });
+});
 </script>
 </head>
 
@@ -28,7 +23,7 @@
 <div style = "position:relative;">
 	<div class=".col-xs-6 .col-sm-3">
 		<div class="thumbnail tile tile-green">
-        	<a href="index" class="fa-links" >
+        	<a href="index" class="fa-links">
             	<h1>Home</h1>
                 <i class="fa fa-3x fa-home"></i>
 			</a>
@@ -62,30 +57,32 @@
 
 <div class="row" style = "margin-top:15%; position:relative;">
   <div class="span6">
-  <h1> About Me</h1>
-  <p>Hi everyone, my name is Ryan Yu, and I am currently a student attending University 
-  of California, San Diego majoring in computer science. I enjoy coding and think it really 
-  fun with many of my own projects. As a student and employee,
-  <img src = "resources/ryan.jpg" style = "float:left; margin-right:5px; margin-top:5px;
-   margin-bottom:5px; width:30%; height:30%;">
-   I have found myself learning 
-  many languages, including C, Java, JavaScript, HTML, and Objective C.
-  <br>
-  <br>
-  I want to work to be able to gain experience in the work world while also building
-  my skills as a software engineer. 
-  I have done many projects on my own as well as group projects at school, and I enjoy
-  it hoping I can contribute to a real world project one day and put my skills to use.
-  </p>  
+  <h1>What I do for Fun! :)</h1>
+  Aside from computer science, I also like to have fun, especially with my friends. 
+  Some of the activities I like to do are going to the beach, eating desserts, 
+  going to concerts, and seeing new things! 
+  <img src = "resources/beach.jpg" style = "float:left; margin-right:5px; margin-bottom:5px; width:40%; height:30%;">
+  I also enjoy going on road trips and seeing beautiful scenery and new experiences, 
+  like snowboarding or camping since it is really fun with friends. I like to do all 
+  <img src = "resources/snow.jpg" style = "float:right; margin-left:5px; margin-bottom:5px; width:40%; height:40%;">
+  of these activities since it lets me relax and not think about work for a while. I really
+  like going outdoors and having fun sometimes with my dog!, a break from the computer. :D
+  To many of my friends surprise, I do not enjoy playing games, which is why I like hanging
+  out with friends.
+  <img src = "resources/ollie.jpg" style = "float:left; margin-right:5px; margin-top:5px; width:40%; height:30%;">
+
 </div>
-  <div class="span2">
-  <h1> Download Resume</h1> 
-  		<div class="thumbnail tile tile-emerald">
-			<h1>Resume</h1>
-          	<a href="https://www.dropbox.com/s/muar6j6r63lqgl4/resumeJan2014.pdf" class="fa-links">
-            	<i class="fa fa-3x fa-download"></i>
-			</a>
-		</div>
+  <div class="span4">
+  <h1>Hobbies</h1> 
+<ul class="list-group">
+  <li class="list-group-item">Coding</li>
+  <li class="list-group-item">Hiking</li>
+  <li class="list-group-item">Desserts</li>
+  <li class="list-group-item">Snowboarding</li>
+  <li class="list-group-item">Movies</li>
+  <li class="list-group-item">Going to the Beach</li>
+
+</ul>
 	</div>
 	
 	<div style ="clear: both;
